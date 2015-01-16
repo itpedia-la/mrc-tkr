@@ -1,7 +1,7 @@
 body { margin:0px; padding:0px; font-family: tahoma; font-size:13px; background:url(../img/background.png) repeat-x #fff }
 #wrapper { width:1028px; margin:0px auto; padding:0px ;}
 #footer { color:#ccc }
-hr { border-top:none; border-right:none; border-left:none; margin:5px 0px 5px 0px; border-bottom:1px solid #ccc}
+hr { border-top:1px solid #DBDBDE; border-right:none; border-left:none; margin:5px 0px 5px 0px; border-bottom:1px solid #fff}
 #header { background:#fff; padding:10px }
 .img { border:1px solid #ccc; background:#f1f1f1; padding:4px }
 .ClearFix{ content:""; height: 0; clear: both; font-size: 0; visibility: hidden; }
