@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="app_mode" content="rms">
 
-<base href="http://localhost/fmg-acc/">
+<base href="http://localhost/mrc-pfms/">
 <link href="public/css/style.css" rel="stylesheet" type="text/css" />
 <link href="public/css/kendo.common.min.css" rel="stylesheet">
 <link href="public/css/kendo.silver.min.css" rel="stylesheet">
@@ -47,5 +47,5 @@
 			<li style="float: right" class="k-primary"><a href="{{ URL::to('user/logout') }}"><span class="sprite businessman-16-white">&nbsp;</span> ອອກຈາກລະບົບ</a></li>
 		</ul>
 		@else
-		<div style="margin:200px"></div>
+		<div style="margin:50px"></div>
 		@endif
