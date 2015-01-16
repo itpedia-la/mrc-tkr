@@ -10,7 +10,7 @@
 <link href="public/css/kendo.silver.min.css" rel="stylesheet">
 <script src="public/js/jquery.min.js"></script>
 <script src="public/js/kendo.all.min.js"></script>
-<title>Miracle Lao | Project Financial Management System</title>
+<title>Miracle Lao | Online Ticketing Reservation and Management</title>
 </head>
 
 <!-- <style>
@@ -30,7 +30,7 @@
 		@if( Auth::id() ) 
 		<div id="header">
 			<h2 style="padding:0px; margin:4px 0px 4px 0px; color:#005186">Miracle Lao</h2>
-			<h3 style="color:#ccc; margin:0px; padding:0px">Project Financial Management System</h3>
+			<h3 style="color:#ccc; margin:0px; padding:0px">Online Ticketing Reservation and Management</h3>
 		</div>
 		<ul id="menu">
 

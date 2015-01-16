@@ -1,6 +1,7 @@
 @include('layout.header')
 
 <div align="center">
+<h3>Online Ticketing Reservation</h3>
  @if ($errors->has())
 	 @foreach ($errors->all() as $error)
 		<span class="tag red"> {{ $error }}</span><br>     <br>    

@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => '67.20.116.165',
-			'database'  => 'amlaocom_pfmdb',
-			'username'  => 'amlaocom_pfmuser',
-			'password'  => 'MXR.7CxfWpS3',
+			'database'  => 'amlaocom_tkr_db',
+			'username'  => 'amlaocom_tkruser',
+			'password'  => 'Z!o^0rbbVITR',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
