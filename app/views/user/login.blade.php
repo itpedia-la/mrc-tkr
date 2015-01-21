@@ -1,7 +1,7 @@
 @include('layout.header')
 <div align="center">
 <div class="k-block extended auto">
-<h3>ເຂົ້າສູ່ລະບົບ</h3>
+<img src="img/logo.png">
 <hr/>
  @if ($errors->has())
 	 @foreach ($errors->all() as $error)

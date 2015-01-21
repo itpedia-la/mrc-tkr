@@ -10,7 +10,7 @@
 <link href="css/kendo.silver.min.css" rel="stylesheet">
 <script src="js/jquery.min.js"></script>
 <script src="js/kendo.all.min.js"></script>
-<title>First May Group | Accounting Management</title>
+<title>Miraclelao| Online Ticketing Reservation</title>
 </head>
 
 <!-- <style>
@@ -29,8 +29,9 @@
 	<div id="wrapper">
 		@if( Auth::id() ) 
 		<div id="header">
-			<h2 style="padding:0px; margin:4px 0px 4px 0px; color:#005186">Miraclelao</h2>
-			<h3 style="color:#ccc; margin:0px; padding:0px">Online Ticketing Reservation</h3>
+			<img src="img/logo.png" width="80" class="floatLeft">
+			<h3 style="color:#444; margin:23x 0px 0px 0px; padding:0px">Online Ticketing<br/>Reservation</h3>
+			<div class="ClearFix"></div>
 		</div>
 		<ul id="menu">
 
@@ -40,8 +41,6 @@
 			<li><span class="sprite gear-2-16">&nbsp;</span> ຕັ້ງຄ່າ
 				<ul>
 					<li id="liUserManage"><a href="{{ URL::to('user/list') }}">ຜູ້ໃຊ້ງານ</a></li>
-					<li id="liExchangeRate"><a href="{{ URL::to('exchange') }}">ອັດຕາແລກປ່ຽນ</a></li>
-					<li id="liApplicationSetting"><a href="{{ URL::to('profile') }}">ຕັ້ງຄ່າທົ່ວໄປ</a></li>
 				</ul></li>
 
 			<li style="float: right" class="k-primary"><a href="{{ URL::to('user/logout') }}"><span class="sprite businessman-16-white">&nbsp;</span> ອອກຈາກລະບົບ</a></li>
