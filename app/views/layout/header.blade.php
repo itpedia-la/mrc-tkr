@@ -4,13 +4,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="app_mode" content="rms">
 
-<base href="http://localhost/mrc-pfms/">
-<link href="public/css/style.css" rel="stylesheet" type="text/css" />
-<link href="public/css/kendo.common.min.css" rel="stylesheet">
-<link href="public/css/kendo.silver.min.css" rel="stylesheet">
-<script src="public/js/jquery.min.js"></script>
-<script src="public/js/kendo.all.min.js"></script>
-<title>Miracle Lao | Online Ticketing Reservation and Management</title>
+<base href="http://localhost/mrc-tkr/">
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/kendo.common.min.css" rel="stylesheet">
+<link href="css/kendo.silver.min.css" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script src="js/kendo.all.min.js"></script>
+<title>First May Group | Accounting Management</title>
 </head>
 
 <!-- <style>
@@ -29,23 +29,23 @@
 	<div id="wrapper">
 		@if( Auth::id() ) 
 		<div id="header">
-			<h2 style="padding:0px; margin:4px 0px 4px 0px; color:#005186">Miracle Lao</h2>
-			<h3 style="color:#ccc; margin:0px; padding:0px">Online Ticketing Reservation and Management</h3>
+			<h2 style="padding:0px; margin:4px 0px 4px 0px; color:#005186">Miraclelao</h2>
+			<h3 style="color:#ccc; margin:0px; padding:0px">Online Ticketing Reservation</h3>
 		</div>
 		<ul id="menu">
 
-			<li><a href="transaction"><span class="sprite invoice-16">&nbsp;</span> ສະຖິຕິຫນ້າຫລັກ</a></li>
-			<li><a href="product/"><span class="sprite product-16">&nbsp;</span> ສິນຄ້າ ແລະ ການບໍລິການ</a></li>
+			<li><a href="transaction"><span class="sprite invoice-16">&nbsp;</span> ຫນ້າຫລັກ</a></li>
+			<li><a href="product/"><span class="sprite product-16">&nbsp;</span> ແຜນຜັງບ່ອນນັ່ງ</a></li>
 			<li><span class="sprite area-chart-16">&nbsp;</span> ລາຍງານ</li>	
 			<li><span class="sprite gear-2-16">&nbsp;</span> ຕັ້ງຄ່າ
 				<ul>
-					<li id="liUserManage"> ຜູ້ໃຊ້ງານ</li>
-					<li id="liExchangeRate"> ອັດຕາແລກປ່ຽນ</li>
-					<li id="liApplicationSetting"> ຕັ້ງຄ່າລະບົບ</li>
+					<li id="liUserManage"><a href="{{ URL::to('user/list') }}">ຜູ້ໃຊ້ງານ</a></li>
+					<li id="liExchangeRate"><a href="{{ URL::to('exchange') }}">ອັດຕາແລກປ່ຽນ</a></li>
+					<li id="liApplicationSetting"><a href="{{ URL::to('profile') }}">ຕັ້ງຄ່າທົ່ວໄປ</a></li>
 				</ul></li>
 
 			<li style="float: right" class="k-primary"><a href="{{ URL::to('user/logout') }}"><span class="sprite businessman-16-white">&nbsp;</span> ອອກຈາກລະບົບ</a></li>
 		</ul>
 		@else
-		<div style="margin:50px"></div>
+		<div style="margin:200px"></div>
 		@endif
