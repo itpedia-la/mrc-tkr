@@ -54,6 +54,83 @@ Route::filter('auth.basic', function()
 	return Auth::basic();
 });
 
+/**
+ * Route Filter ( Customer User Access Role )
+ * ------------------------------------------
+ * @author Somwangs
+ */
+Route::filter('restrict', function($route, $request, $permissionCode) {
+
+	if( Auth::id() ) {
+
+		# Find loggin user
+		$User = User::find(Auth::id());
+
+		# If user.systemUser is not = 1
+		if( $User->systemUser == 0 ) {
+
+			# Find user_group_id
+			$user_group_id = $User->user_group_id;
+				
+			# Find Group PermissionList
+			$PermissionList = UserGroup::find($user_group_id);
+			$PermissionList = $PermissionList->permissionList;
+
+			# If user_group.permissionList isset
+			if( $PermissionList ) {
+
+				$PermissionList = json_decode($PermissionList,true);
+
+				# check if user_group.permissionList is containing $permissionCode
+				if ( !array_key_exists( $permissionCode, $PermissionList ) ) {
+
+					# Find Permission Description
+					$UserGroupPermission = UserGroupPermission::find($permissionCode);
+					$permissionDescription = $UserGroupPermission->permissionDescription;
+						
+					if (Request::ajax()) {
+
+						return Response::make('Unauthorized', 401);
+
+					} else {
+
+						return View::make('user/access_denied')->with('permissionCode',$permissionCode)->with('permissionDescription',$permissionDescription);
+
+					}
+
+				}
+
+			} else {
+
+				if (Request::ajax()) {
+
+					return Response::make('Unauthorized', 401);
+
+				} else {
+
+					return View::make('user/access_denied')->with('permissionCode',$permissionCode)->with('permissionDescription',$permissionDescription);
+
+				}
+
+			}
+
+		}
+
+	} else {
+
+		if (Request::ajax()) {
+
+			return Response::make('Unauthorized', 401);
+
+		} else {
+				
+			return Redirect::to('user/login')->with('message', 'ກະລຸນາເຂົ້າສູ່ລະບົບ');
+				
+		}
+
+	}
+});
+
 /*
 |--------------------------------------------------------------------------
 | Guest Filter
