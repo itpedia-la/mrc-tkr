@@ -50,3 +50,9 @@ Route::post('user/group/permission/submit', array('before'=>'restrict:10', 'uses
 
 # user permission route
 Route::get('user/access/denied' , 'UserController@userAccessDenied');
+
+/**
+ * Seat Route
+ * ----------
+ */
+Route::get('seat/' , 'SeatController@home');

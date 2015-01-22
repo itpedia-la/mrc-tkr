@@ -35,14 +35,10 @@
 		</div>
 		<ul id="menu">
 
-			<li><a href="transaction"><span class="sprite invoice-16">&nbsp;</span> ຫນ້າຫລັກ</a></li>
-			<li><a href="product/"><span class="sprite product-16">&nbsp;</span> ແຜນຜັງບ່ອນນັ່ງ</a></li>
+			<li><a href="{{ URL::to('seat') }}"><span class="sprite product-16">&nbsp;</span> ແຜນຜັງບ່ອນນັ່ງ</a></li>
 			<li><span class="sprite area-chart-16">&nbsp;</span> ລາຍງານ</li>	
-			<li><span class="sprite gear-2-16">&nbsp;</span> ຕັ້ງຄ່າ
-				<ul>
-					<li id="liUserManage"><a href="{{ URL::to('user/list') }}">ຜູ້ໃຊ້ງານ</a></li>
-				</ul></li>
 
+<li id="liUserManage"><a href="{{ URL::to('user/list') }}"><span class="sprite gear-2-16">&nbsp;</span> ຜູ້ໃຊ້ງານ</a></li>
 			<li style="float: right" class="k-primary"><a href="{{ URL::to('user/logout') }}"><span class="sprite businessman-16-white">&nbsp;</span> ອອກຈາກລະບົບ</a></li>
 		</ul>
 		@else
