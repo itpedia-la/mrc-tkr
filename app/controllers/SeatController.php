@@ -10,30 +10,30 @@ class SeatController extends BaseController {
 
 	function home() {
 		
-		echo "INSERT INTO seat (number) VALUES ('BR');<br/>";
+		/*echo "INSERT INTO seat (number) VALUES ('BR');<br/>";
 		
 		for( $i=1; $i <= 10; $i++ ) {
-			echo "INSERT INTO seat (number, price, status, created_at, updated_at, remove) VALUES ('E".$i."', '150000', 0, NOW(), NOW(), 0);<br/>";
+			echo "INSERT INTO seat (number, price, status, created_at, updated_at, remove) VALUES ('Z".$i."', '50000', 0, NOW(), NOW(), 0);<br/>";
 		}
 		
 			echo "INSERT INTO seat (number) VALUES ('|');<br/>";
 			
 		for( $i=11; $i <= 20; $i++ ) {
-			echo "INSERT INTO seat (number, price, status, created_at, updated_at, remove) VALUES ('E".$i."', '150000', 0, NOW(), NOW(), 0);<br/>";
+			echo "INSERT INTO seat (number, price, status, created_at, updated_at, remove) VALUES ('Z".$i."', '50000', 0, NOW(), NOW(), 0);<br/>";
 		}
 		
 			echo "INSERT INTO seat (number) VALUES ('|');<br/>";	
 			
 		for( $i=21; $i <= 30; $i++ ) {
-			echo "INSERT INTO seat (number, price, status, created_at, updated_at, remove) VALUES ('E".$i."', '150000', 0, NOW(), NOW(), 0);<br/>";
+			echo "INSERT INTO seat (number, price, status, created_at, updated_at, remove) VALUES ('Z".$i."', '50000', 0, NOW(), NOW(), 0);<br/>";
 		}
 			echo "INSERT INTO seat (number) VALUES ('|');<br/>";
 			
 		for( $i=31; $i <= 40; $i++ ) {
-			echo "INSERT INTO seat (number, price, status, created_at, updated_at, remove) VALUES ('E".$i."', '150000', 0, NOW(), NOW(), 0);<br/>";
+			echo "INSERT INTO seat (number, price, status, created_at, updated_at, remove) VALUES ('Z".$i."', '50000', 0, NOW(), NOW(), 0);<br/>";
 		}
 		
-		echo "INSERT INTO seat (number) VALUES ('hr');<br/>";
+		echo "INSERT INTO seat (number) VALUES ('hr');<br/>";*/
 		
 		$VIP = Seat::where('id','>','0')->get()->toArray();
 
