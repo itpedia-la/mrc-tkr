@@ -17,8 +17,8 @@
 		border:1px solid #000; 
 		font-size:9px; 
 		padding:1px;
-		 -moz-border-radius:4px 4px 4px 4px; 
-		border-radius:4px 4px 4px 4px; 
+		 -moz-border-radius:2px 2px 2px 2px; 
+		border-radius:2px 2px 2px 2px; 
 		cursor: pointer;
 		
 	}
