@@ -15,13 +15,14 @@
  * Dashboard Route
  * ---------------
  */
-Route::get('dashboard', 'DashboardController@dashboard');
+Route::get('/', 'HomeController@home');
+Route::get('done/' , 'HomeController@done');
 
 /**
  * User Route
  * ----------
  */
-
+Route::get('/admin', 'LoginController@login');
 Route::get('user/login', 'LoginController@login');
 Route::post('user/login/submit', 'LoginController@submit');
 Route::get('user/logout','UserController@logout');

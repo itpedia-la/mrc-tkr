@@ -6,7 +6,7 @@
  * @author Somwang
  *
  */
-class SeatController extends BaseController {
+class SeatController extends Controller {
 
 	function home() {
 		
@@ -49,11 +49,62 @@ class SeatController extends BaseController {
 			
 			} elseif( $value['number'] == 'hr' ) {
 				
-				$value['seat'] = HTML::entities('</br><br/>--------------------------------------------------------------------------------------------------------</br></br>');
+				$value['seat'] = HTML::entities('</br><br/>--------------------------------------------------- <span class="tag fb"><b>'.number_format($value['price']).'</b></span> ---------------------------------------------------</br></br>');
 				
 			} else {
 				
-				$value['seat'] = '<span class="seat available">'.$value['number'].'</span>';
+				if( Auth::id() ) { 
+					
+					switch( $value['status'] ) {
+							
+						case 0:
+							$class = 'seat_available';
+							$number = $value['number'];
+							break;
+								
+						case 1:
+							$class = 'seat_pending';
+							$number = $value['number'];
+							break;
+								
+						case 2:
+							$class = 'seat_paid';
+							$number = $value['number'];
+							break;
+					
+						default:
+							$class = 'seat';
+							$number = $value['number'];
+							break;
+					}
+
+				} else {
+					
+					switch( $value['status'] ) {
+							
+						case 0:
+							$class = 'seat_available';
+							$number = $value['number'];
+							break;
+					
+						case 1:
+							$class = 'seat_reserved_public';
+							$number = 'XXXX';
+							break;
+					
+						case 2:
+							$class = 'seat_reserved_public';
+							$number = 'XXXX';
+							break;
+								
+						default:
+							$class = 'seat';
+							$number = 'XXXX';
+							break;
+					}
+				}
+	
+				$value['seat'] = '<span class="'.$class.'" data-id="'.$value['id'].'">'.$number.'</span>';
 			}
 			
 			$VIP[$key] = $value;

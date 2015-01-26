@@ -59,6 +59,7 @@ fieldset { border:0px; }
 .tag.light-gray { background:#E6E6E6; color:#000;   }
 .tag.light-gray-bordered { background:#E6E6E6; color:#000;  text-shadow: 1px 1px #fff; border:1px solid #A3A3A3  }
 .tag.blue { background:#005186 ; color:#fff;   }
+.tag.fb { background:#2F477A ; color:#fff;   }
 
 .sprite { background: url('../img/index.png') no-repeat top left; width: 16px; height: 16px; display:inline-block  } 
 .sprite.activity-feed-16 { background-position: 0px 0px;  } 

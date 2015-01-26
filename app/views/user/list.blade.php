@@ -1,8 +1,7 @@
 @include('layout.header')
+<div align="center">
 
-<h3>ບໍລິຫານຜູ້ໃຊ້ງານ</h3>
-<hr class="hrHeader"/>
-<div class="k-block extended">
+<div class="k-block extended" style="width:50%">
 <div class="floatLeft">
 	ກູ່ມຜູ້ໃຊ້ງານ: <input type="text" id="ddUserGroup" style="width:250px"> <button class="k-button" id="btnGroupPermission">ກຳໜົດສິດກຸ່ມຜູ້ໃຊ້ງານ</button>
 </div>
@@ -13,6 +12,7 @@
 <hr/>
 @if( Session::get('message') ) <div class="message green">{{ Session::get('message') }}</div>@endif
 <div id="gridUserList"></div>
+</div>
 </div>
 <script type="text/javascript">
 

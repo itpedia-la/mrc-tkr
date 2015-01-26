@@ -7,10 +7,10 @@
 <base href="http://localhost/mrc-tkr/">
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link href="css/kendo.common.min.css" rel="stylesheet">
-<link href="css/kendo.silver.min.css" rel="stylesheet">
+<link href="css/kendo.default.min.css" rel="stylesheet">
 <script src="js/jquery.min.js"></script>
 <script src="js/kendo.all.min.js"></script>
-<title>Miraclelao| Online Ticketing Reservation</title>
+<title>Bob Freeman Talk Show - Ticket Reservation</title>
 </head>
 
 <!-- <style>
@@ -26,21 +26,22 @@
 </style> -->
 
 <body>
-	<div id="wrapper">
+	<div id="">
+		<div align="center" style="padding:30px 0px 0px 0px">
 		@if( Auth::id() ) 
-		<div id="header">
-			<img src="img/logo.png" width="80" class="floatLeft">
-			<h3 style="color:#444; margin:23x 0px 0px 0px; padding:0px">Online Ticketing<br/>Reservation</h3>
-			<div class="ClearFix"></div>
-		</div>
-		<ul id="menu">
 
-			<li><a href="{{ URL::to('seat') }}"><span class="sprite product-16">&nbsp;</span> ແຜນຜັງບ່ອນນັ່ງ</a></li>
-			<li><span class="sprite area-chart-16">&nbsp;</span> ລາຍງານ</li>	
-
-<li id="liUserManage"><a href="{{ URL::to('user/list') }}"><span class="sprite gear-2-16">&nbsp;</span> ຜູ້ໃຊ້ງານ</a></li>
-			<li style="float: right" class="k-primary"><a href="{{ URL::to('user/logout') }}"><span class="sprite businessman-16-white">&nbsp;</span> ອອກຈາກລະບົບ</a></li>
-		</ul>
+			<a class="k-button" href="{{ URL::to('seat') }}">ແຜນຜັງບ່ອນນັ່ງ</a>
+			<a class="k-button" href="{{ URL::to('user/logout') }}">ລາຍງານ</a>
+			<a class="k-button" href="{{ URL::to('user/list') }}">ຜູ້ໃຊ້ງານ</a>
+			<a class="k-button" href="{{ URL::to('user/logout') }}">ອອກຈາກລະບົບ</a>
+		
 		@else
-		<div style="margin:200px"></div>
+		<div style="margin:00px"></div>
 		@endif
+		
+		</div>
+				<div align="center">
+				<img src="img/logo.png">
+	<h3>Ticket Reservation</h3>
+</div>
+<hr class="hrHeader"/>
