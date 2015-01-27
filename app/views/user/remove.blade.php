@@ -1,8 +1,7 @@
 @include('layout.header')
 {{ Form::open(array('url' => 'user/remove/submit')) }}
 <input type="hidden" value="{{ Route::input('user_id') }}" name="user_id">
-<h3>ບໍລິຫານຜູ້ໃຊ້ງານ</h3>
-<hr class="hrHeader"/>
+
 <div align="center">
 
 <div class="k-block extended auto" style="width:40%">

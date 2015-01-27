@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="app_mode" content="rms">
 
-<base href="http://bobfreemantalkshow.com/ticket/">
+<base href="http://localhost/mrc-tkr/">
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link href="css/kendo.common.min.css" rel="stylesheet">
 <link href="css/kendo.default.min.css" rel="stylesheet">
@@ -27,6 +27,10 @@
 
 <body>
 	<div id="">
+			<div align="center">
+				<img src="img/logo.png">
+	<h3>Ticket Reservation</h3>
+</div>
 		<div align="center" style="padding:30px 0px 0px 0px">
 		@if( Auth::id() ) 
 
@@ -40,8 +44,5 @@
 		@endif
 		
 		</div>
-				<div align="center">
-				<img src="img/logo.png">
-	<h3>Ticket Reservation</h3>
-</div>
+			
 <hr class="hrHeader"/>

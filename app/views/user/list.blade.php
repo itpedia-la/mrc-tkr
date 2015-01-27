@@ -111,7 +111,7 @@
 				{ field:"login", title: "ລະຫັດ / ອີເມວ", width: '15%', encoded:false },
 				{ field:"firstname", title: "ຊື່", width: '10%', encoded:false },
 				{ field:"lastname", title: "ນາມສະກຸນ", width: '10%', encoded:false },
-				{ field:"created_at", title: "ສ້າງວັນທີ", width: '10%', encoded:false },
+				/*{ field:"created_at", title: "ສ້າງວັນທີ", width: '10%', encoded:false },*/
 				{ field:"updated_at", title: "ແກ້ໄຂວັນທີ", width: '10%', encoded:false },
 	        ],
 	});
