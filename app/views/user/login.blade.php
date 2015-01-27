@@ -2,7 +2,7 @@
 <div align="center">
 <div class="k-block extended auto">
 <!--  <img src="img/logo.png">-->
-<hr/>
+
  @if ($errors->has())
 	 @foreach ($errors->all() as $error)
 		<span class="tag red"> {{ $error }}</span><br>    

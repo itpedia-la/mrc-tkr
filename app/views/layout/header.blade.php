@@ -4,12 +4,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="app_mode" content="rms">
 
-<base href="http://localhost/mrc-tkr/">
+<base href="{{ Config::get('app.url') }}">
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link href="css/kendo.common.min.css" rel="stylesheet">
 <link href="css/kendo.default.min.css" rel="stylesheet">
 <script src="js/jquery.min.js"></script>
 <script src="js/kendo.all.min.js"></script>
+<script src="js/main.js"></script>
 <title>Bob Freeman Talk Show - Ticket Reservation</title>
 </head>
 
@@ -28,14 +29,15 @@
 <body>
 	<div id="">
 			<div align="center">
-				<img src="img/logo.png">
+				<a href="{{ URL::to('/') }}"><img src="img/logo.png" border="0"></a>
 	<h3>Ticket Reservation</h3>
 </div>
 		<div align="center" style="padding:30px 0px 0px 0px">
 		@if( Auth::id() ) 
 
 			<a class="k-button" href="{{ URL::to('seat') }}">ແຜນຜັງບ່ອນນັ່ງ</a>
-			<a class="k-button" href="{{ URL::to('user/logout') }}">ລາຍງານ</a>
+			<a class="k-button" href="{{ URL::to('report/all') }}">ລາຍງານ ຍອດຂາຍ ທັງໝົດ</a>
+			<a class="k-button" href="{{ URL::to('report/person') }}">ລາຍງານ ຍອດຂາຍ ສ່ວນບຸກຄົນ</a>
 			<a class="k-button" href="{{ URL::to('user/list') }}">ຜູ້ໃຊ້ງານ</a>
 			<a class="k-button" href="{{ URL::to('user/logout') }}">ອອກຈາກລະບົບ</a>
 		

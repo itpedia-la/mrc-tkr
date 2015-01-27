@@ -8,6 +8,11 @@
  */
 class SeatController extends Controller {
 
+	public function __construct() {
+	
+		CustomerController::expiredDateCheck();
+	}
+	
 	function home() {
 		
 		/*echo "INSERT INTO seat (number) VALUES ('BR');<br/>";

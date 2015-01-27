@@ -2,6 +2,10 @@
 
 class LoginController extends Controller {
 
+	public function __construct() {
+	
+		CustomerController::expiredDateCheck();
+	}
 	/**
 	 * Login
 	 * --------------

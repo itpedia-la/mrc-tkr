@@ -7,7 +7,51 @@
  *
  */
 class CustomerController extends Controller {
+	
+	public function __construct() {
+		
+		CustomerController::expiredDateCheck();
+	}
+	/**
+	 * Customer Report All
+	 * -------------------
+	 */
+	function reportAll() {
+		$data = Customer::getReportAll();
+		$sumary = Customer::sumary();
+		
+		return View::make('report/all')->with('data',$data)->with('sumary',$sumary);
+		
+	}
+	
+	/**
+	 * Customer By user_id
+	 * -------------------
+	 */
+	function reportByUser() {
+		
+		$user_id = Route::input('user_id');
+		
+		$data = Customer::getReportByUser($user_id);
+		$sumary = Customer::sumaryByUser($user_id);
+	
+		return View::make('report/all')->with('data',$data)->with('sumary',$sumary);
+	
+	}
 
+	/**
+	 * Customer Report Personal
+	 * ------------------------
+	 */
+	function reportPerson() {
+		
+		$data = Customer::getReportAll();
+		$sumary = Customer::sumaryPerson();
+		$data = Customer::getReportPersonal();
+
+		return View::make('report/person')->with('data',$data)->with('sumary',$sumary);
+	}
+	
 	function submit() {
 	
 		$rules = array(
@@ -52,15 +96,101 @@ class CustomerController extends Controller {
 			$Customer->telephone = Input::get('telephone');
 			$Customer->address = Input::get('address');
 			$Customer->seatJson = urldecode(Input::get('seat'));
+			
 			$Customer->user_id = Auth::id();
 			$Customer->total = $total;
 			$Customer->status = 0;
 			$Customer->save();
 			
+			$CustomerUpdate = Customer::find($Customer->id);
+			$CustomerUpdate->expired_at = date('Y-m-d',strtotime( $CustomerUpdate->created_at ) + (24*3600*5));
+			$CustomerUpdate->save();
+			
 			$id = Crypt::encrypt($Customer->id);
 			return Response::json($id, 200);
 
 		}
+	}
+	
+	function remove() {
+		
+		$Customer = Customer::find(Input::get('id'));
+		$Customer->status = 3;
+		
+		$seats = json_decode($Customer->seatJson,true);
+		
+		foreach( $seats as $i ) {
+			$s = Seat::find($i['value']);
+			$s->status = 0;
+			$s->save();
+		}
+		
+		$Customer->save();
+
+		return Response::json(null, 200);
+	}
+	
+	function setPaid() {
+	
+		$Customer = Customer::find(Input::get('id'));
+		$Customer->status = 1;
+	
+		$seats = json_decode($Customer->seatJson,true);
+	
+		foreach( $seats as $i ) {
+			$s = Seat::find($i['value']);
+			$s->status = 2;
+			$s->save();
+		}
+	
+		$Customer->save();
+	
+		return Response::json(null, 200);
+	}
+	
+	function setIssued() {
+	
+		$Customer = Customer::find(Input::get('id'));
+		$Customer->status = 2;
+	
+		$seats = json_decode($Customer->seatJson,true);
+	
+		foreach( $seats as $i ) {
+			$s = Seat::find($i['value']);
+			$s->status = 3;
+			$s->save();
+		}
+	
+		$Customer->save();
+	
+		return Response::json(null, 200);
+	}
+	
+	public static function expiredDateCheck() {
+		
+		$Customer = Customer::where('status','=',0)->where('remove','=',0)->get()->toArray();
+		
+		foreach( $Customer as $key => $value ) {
+			
+			if( strtotime(date('Y-m-d',time())) > strtotime($value['expired_at'])) {
+				
+				$CustomerUpdate = Customer::find($value['id']);
+				$CustomerUpdate->status = 3;
+				
+				# Update Seat Status
+				$seats = json_decode($CustomerUpdate->seatJson,true);
+				
+				foreach( $seats as $i ) {
+					$s = Seat::find($i['value']);
+					$s->status = 0;
+					$s->save();
+				}
+				
+				$CustomerUpdate->save();
+
+			}
+		}
+
 	}
 	
 }
