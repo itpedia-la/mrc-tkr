@@ -89,17 +89,17 @@ class SeatController extends Controller {
 					
 						case 1:
 							$class = 'seat_reserved_public';
-							$number = 'XXXX';
+							$number = 'XXX';
 							break;
 					
 						case 2:
 							$class = 'seat_reserved_public';
-							$number = 'XXXX';
+							$number = 'XXX';
 							break;
 								
 						default:
 							$class = 'seat';
-							$number = 'XXXX';
+							$number = 'XXX';
 							break;
 					}
 				}

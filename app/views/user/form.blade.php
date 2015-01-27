@@ -1,7 +1,6 @@
 @include('layout.header')
 {{ Form::open(array('url' => 'user/form/submit')) }}
-<h3>ບໍລິຫານຜູ້ໃຊ້ງານ</h3>
-<hr class="hrHeader"/>
+
 <div align="center">
 
 <div class="k-block extended auto" style="width:40%">

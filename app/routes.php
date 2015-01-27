@@ -16,8 +16,9 @@
  * ---------------
  */
 Route::get('/', 'HomeController@home');
-Route::get('done/' , 'HomeController@done');
-
+Route::get('done/{id}' , 'HomeController@done');
+Route::get('seat/' , 'SeatController@home');
+Route::post('customer/submit' , 'CustomerController@submit');
 /**
  * User Route
  * ----------
@@ -52,8 +53,3 @@ Route::post('user/group/permission/submit', array('before'=>'restrict:10', 'uses
 # user permission route
 Route::get('user/access/denied' , 'UserController@userAccessDenied');
 
-/**
- * Seat Route
- * ----------
- */
-Route::get('seat/' , 'SeatController@home');

@@ -22,6 +22,10 @@ class HomeController extends Controller {
 
 	public function done()
 	{
-		return View::make('home/done');
+		$id = Crypt::decrypt(Route::input('id'));
+		$total = Customer::find($id);
+		$total = number_format($total->total);
+		
+		return View::make('home/done')->with('total',$total);
 	}
 }
