@@ -32,7 +32,7 @@
 				<a href="{{ URL::to('/') }}"><img src="img/logo.png" border="0"></a>
 	<h3>Ticket Reservation</h3>
 </div>
-		<div align="center" style="padding:30px 0px 0px 0px">
+		<div align="center" style="padding:0px 0px 0px 0px">
 		@if( Auth::id() ) 
 
 			<a class="k-button" href="{{ URL::to('seat') }}">ແຜນຜັງບ່ອນນັ່ງ</a>
