@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="app_mode" content="rms">
 
-<base href="http://localhost/mrc-tkr/">
+<base href="http://bobfreemantalkshow.com/ticket/">
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link href="css/kendo.common.min.css" rel="stylesheet">
 <link href="css/kendo.default.min.css" rel="stylesheet">

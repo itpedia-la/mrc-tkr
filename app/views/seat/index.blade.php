@@ -2,51 +2,74 @@
 
 
 <style type="text/css">
-
+	br { margin:0px; padding:0px }
 	.seat_reserved_public {
 		border:1px solid #bbb; 
-		font-size:10px; 
+		font-size:9px; 
 		color:#ccc;
-		padding:2px 3px 2px 3px;
+		padding:1px 2px 1px 2px;
 		 -moz-border-radius:2px 2px 2px 2px; 
 		border-radius:2px 2px 2px 2px; 
 		
 		background:#fff;
-		text-shadow: 1px 1px #fff
+		text-shadow: 1px 1px #fff;
+				display: inline-block;
+		width: 14px;
 	}
 	.seat_pending {
 		border:1px solid #bbb; 
-		font-size:10px; 
+		font-size:9px; 
 		color:#fff;
-		padding:2px 3px 2px 3px;
+		padding:1px 2px 1px 2px;
 		 -moz-border-radius:2px 2px 2px 2px; 
 		border-radius:2px 2px 2px 2px; 
 		
-		background:red;
-		text-shadow: 0px 0px #fff
+		background:orange;
+		text-shadow: 0px 0px #fff;
+		display: inline-block;
+		width: 14px;
 	}
 	.seat_paid {
 		border:1px solid #bbb; 
-		font-size:10px; 
+		font-size:9px; 
 		color:#fff;
-		padding:2px 3px 2px 3px;
+		padding:1px 2px 1px 2px;
 		 -moz-border-radius:2px 2px 2px 2px; 
 		border-radius:2px 2px 2px 2px; 
 		
 		background:green;
-		text-shadow: 0px 0px #fff
+		text-shadow: 0px 0px #fff;
+				display: inline-block;
+		width: 14px;
+	}
+	.seat_issued {
+		border:1px solid #bbb; 
+		font-size:9px; 
+		color:#fff;
+		padding:1px 2px 1px 2px;
+		 -moz-border-radius:2px 2px 2px 2px; 
+		border-radius:2px 2px 2px 2px; 
+		
+		background:blue;
+		text-shadow: 0px 0px #fff;
+				display: inline-block;
+		width: 14px;
 	}
 	.seat_available { 
-	
+		
+
 		border:1px solid #ccc; 
-		font-size:10px; 
-		padding:2px 3px 2px 3px;
+		font-size:9px; 
+		padding:1px 2px 1px 2px;
 		 -moz-border-radius:2px 2px 2px 2px; 
 		border-radius:2px 2px 2px 2px; 
 		cursor: pointer;
 		background:#dedede;
-		text-shadow: 1px 1px #fff
+		text-shadow: 1px 1px #fff;
+		display: inline-block;
+		width: 14px;
 	}
+	
 
 	.seat_available:hover { background:#FFFF66 }
 	.seat_available.selected { background:#FF6600; color:#fff; text-shadow:0px 0px #fff }
@@ -61,11 +84,11 @@
 <button class="k-button k-primary" type="button" id="btnSeatOk">ຕົກລົງ</button>  <button class="k-button" id="btnReset">ເລີ່ມໃຫມ່</button>
 <p>ກະລຸນາເລືອກບ່ອນນັ່ງ</p>
 </div>
-<hr class="hrHeader"/>
+<hr />
 	<!-- Begine: VIP ZONE -->
 	<div align="center">
 	
-		---------------------------------------------------  <span class="tag fb"><b>600,000</b></span> ---------------------------------------------------<br/><br/>
+		<!-- ---------------------------------------------------  <span class="tag fb"><b>600,000</b></span> ---------------------------------------------------<br/><br/> -->
 		@foreach( $VIP as $seat )
 			
 				{{ HTML::decode( $seat['seat']) }}

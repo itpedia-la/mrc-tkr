@@ -35,7 +35,7 @@ class SeatController extends Controller {
 		
 		echo "INSERT INTO seat (number) VALUES ('hr');<br/>";*/
 		
-		$VIP = Seat::where('id','>','0')->get()->toArray();
+		$VIP = Seat::where('id','>','0')->where('remove','=',0)->get()->toArray();
 
 		foreach($VIP as $key => $value) {
 			
@@ -71,7 +71,10 @@ class SeatController extends Controller {
 							$class = 'seat_paid';
 							$number = $value['number'];
 							break;
-					
+						case 3:
+							$class = 'seat_issued';
+							$number = $value['number'];
+							break;
 						default:
 							$class = 'seat';
 							$number = $value['number'];
@@ -89,17 +92,20 @@ class SeatController extends Controller {
 					
 						case 1:
 							$class = 'seat_reserved_public';
-							$number = 'XXX';
+							$number = 'xx';
 							break;
 					
 						case 2:
 							$class = 'seat_reserved_public';
-							$number = 'XXX';
+							$number = 'xx';
 							break;
-								
+							case 3:
+								$class = 'seat_reserved_public';
+								$number = 'xx';
+								break;
 						default:
 							$class = 'seat';
-							$number = 'XXX';
+							$number = 'xx';
 							break;
 					}
 				}
