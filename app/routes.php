@@ -18,6 +18,7 @@
 Route::get('/', 'HomeController@home');
 Route::get('done/{id}' , 'HomeController@done');
 Route::get('seat/' , 'SeatController@home');
+Route::get('seat/{showDate}' , 'SeatController@home');
 Route::post('customer/submit' , 'CustomerController@submit');
 Route::post('customer/remove' , array('before'=>'restrict:5', 'uses' => 'CustomerController@remove') );
 Route::post('customer/setPaid' , array('before'=>'restrict:5', 'uses' => 'CustomerController@setPaid') );

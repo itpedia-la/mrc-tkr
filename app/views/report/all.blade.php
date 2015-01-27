@@ -9,6 +9,7 @@
 	<thead>
 		<tr style="background:#11315A; color:white">
 			<th>No</th>
+			<td>ການສະແດງວັນທີ</td>
 			<th>ຊື່ ແລະ ນາມສະກຸນ</th>
 			<th>ເບິໂທລະສັບ</th>
 			<th>ທີ່ຢູ່</th>
@@ -25,6 +26,7 @@
 	@foreach( $data as $value )
 	<tr>
 		<td>{{ $value['id'] }}</td>
+		<td>{{ $value['showDate'] }}</td>
 		<td>{{ $value['customer_name'] }}</td>
 		<td>{{ $value['telephone'] }}</td>
 		<td>{{ $value['address'] }}</td>
@@ -55,7 +57,7 @@
 	
 	@endforeach
 	<tr style="background:#11315A; color:white">
-		<td colspan="5" align="right">ລວມທົງໝົດ:</td>
+		<td colspan="6" align="right">ລວມທົງໝົດ:</td>
 		<td>{{ $sumary['totalPending'] }}</td>
 		<td align="right">ຮັບເງິນ:</td>
 		<td>{{ $sumary['totalPaid'] }}</td>

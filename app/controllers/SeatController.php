@@ -39,8 +39,8 @@ class SeatController extends Controller {
 		}
 		
 		echo "INSERT INTO seat (number) VALUES ('hr');<br/>";*/
-		
-		$VIP = Seat::where('id','>','0')->where('remove','=',0)->get()->toArray();
+		$showDate = Route::input('showDate');
+		$VIP = Seat::where('id','>','0')->where('remove','=',0)->where('showDate',$showDate)->get()->toArray();
 
 		foreach($VIP as $key => $value) {
 			

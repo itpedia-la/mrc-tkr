@@ -80,6 +80,7 @@ class Customer extends Eloquent {
 			$data[$key]['expired_at'] = Tool::toDate($value['expired_at']);
 			$data[$key]['user'] = @$User;
 			$data[$key]['seat'] = $seatJson;
+			$data[$key]['showDate'] = Tool::toDate($value['showDate']);
 			$data[$key]['statusHtml'] = Customer::CustomerStatusAdjust($value['status']) ;
 		}
 		

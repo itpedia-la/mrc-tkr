@@ -4,6 +4,10 @@
 <div align="center">
 <form id="frmSeat">
 <!--  <input type="text" class="k-textbox"> <input type="text" class="k-textbox"> -->
+ການສະແດງວັນທີ: <select id="showDate">
+		<option value="2015-02-22" @if(Route::input('showDate')=="2015-02-22") selected="selected" @endif>22-02-2015</option>
+		<option value="2015-02-23" @if(Route::input('showDate')=="2015-02-23") selected="selected" @endif>23-02-2015</option>
+	</select>
 <button class="k-button k-primary" type="button" id="btnSeatOk">ຕົກລົງ</button>  <button class="k-button" id="btnReset">ເລີ່ມໃຫມ່</button>
 <p>ກະລຸນາເລືອກບ່ອນນັ່ງ</p>
 </div>
@@ -22,6 +26,12 @@
 	<!-- End: VIP ZONE -->
 </form>
 <script type="text/javascript">
+
+	$("#showDate").kendoDropDownList({
+		change : function() {
+			window.location = 'seat/'+this.value();
+		}
+	});
 
 	$("#btnSeatOk").kendoButton({enable:false});
 	$("#btnReset").kendoButton({enable:false});
@@ -64,7 +74,8 @@
 
 		var seatData = $("#frmSeat").serializeArray();
 			seatData = encodeURI(JSON.stringify(seatData));
-			
+		var showDate  = "{{ Route::input('showDate') }}";
+		
 		var confirmDialog = document.createElement('div');
 		confirmDialog.id = 'confirmDialog';
 		document.body.appendChild(confirmDialog);
@@ -74,13 +85,13 @@
 	        animation: false,
 	        modal: true,
 	        width: 300,
-	        height : 200,
+	        height : 220,
 	        resizable: false,
 	        draggable: true,
 	        close: function() { this.destroy(); $("#confirmDialog").remove() },
 		}).data("kendoWindow");
 
-		var content = '<div><form id="frmSubmit"><input type="hidden" value="'+seatData+'" name="seat">';
+		var content = '<div><form id="frmSubmit"><input type="hidden" value="'+seatData+'" name="seat"><input type="hidden" value="'+showDate+'" name="showDate">';
 				content+= '<table>';
 				content+= '<tr><td colspan="2" align="center"><span class="tag green" id="message">ກະລຸນາໃສ່ຂໍ້ມູນຕິດຕໍ່</span></td></tr>';
 				content+= '<tr><td colspan="2" align="center"><hr/></tr>';

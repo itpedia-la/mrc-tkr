@@ -96,7 +96,7 @@ class CustomerController extends Controller {
 			$Customer->telephone = Input::get('telephone');
 			$Customer->address = Input::get('address');
 			$Customer->seatJson = urldecode(Input::get('seat'));
-			
+			$Customer->showDate = Input::get('showDate');
 			$Customer->user_id = Auth::id();
 			$Customer->total = $total;
 			$Customer->status = 0;
