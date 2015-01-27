@@ -166,7 +166,7 @@ fieldset { border:0px; }
 		display: inline-block;
 		width: 14px;
 	}
-	
+	.seat_available.red { background:#700000 }
 
 	.seat_available:hover { background:#FFFF66 }
 	.seat_available.selected { background:#FF6600; color:#fff; text-shadow:0px 0px #fff }
