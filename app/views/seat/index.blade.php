@@ -15,7 +15,7 @@
 	<!-- Begine: VIP ZONE -->
 	<div align="center">
 	
-		<!-- ---------------------------------------------------  <span class="tag fb"><b>600,000</b></span> ---------------------------------------------------<br/><br/> -->
+		<br/>--------------------------------------------------- <span class="tag fb"><b>500,000</b></span> ---------------------------------------------------</br></br>
 		@foreach( $VIP as $seat )
 			
 				{{ HTML::decode( $seat['seat']) }}
@@ -85,7 +85,7 @@
 	        animation: false,
 	        modal: true,
 	        width: 300,
-	        height : 220,
+	        height : 230,
 	        resizable: false,
 	        draggable: true,
 	        close: function() { this.destroy(); $("#confirmDialog").remove() },
@@ -98,7 +98,9 @@
 					content+= '<tr><td width="40%" align="right">ຊື່ ແລະ ນາມສະກຸນ: *</td><td><input type="text" class="k-textbox" id="fullname" name="fullname"></td></tr>';
 					content+= '<tr><td width="40%" align="right">ເບີໂທລະສັບ: *</td><td><input type="text" class="k-textbox" id="telephone" name="telephone"></td></tr>';
 					content+= '<tr><td width="40%" align="right">ທີ່ຢູ່: *</td><td><input type="text" class="k-textbox" id="address" name="address"></td></tr>';
-					/*content+= '<tr><td width="40%" align="right">ລວມ (ກີບ): </td><td><input type="text" id="total" name="total" readonly="readonly" value="100000"> </td></tr>';*/
+					@if( $allowFreeTicket )
+					content+= '<tr><td width="40%" align="right">&nbsp;</td><td><input type="checkbox" name="freeTicket" value="1"> ປີ້ຟຣີ</td></tr>';
+					@endif
 					content+= '<tr><td colspan="2" align="center"><hr/></tr>';
 					content+= '<tr><td width="40%" align="right">&nbsp;</td><td><button type="submit" class="k-button k-primary">ຕົກລົງ</button> <button type="button" class="k-button" id="btnCancel">ຍົກເລີກ</button></td></tr>';
 				content+= '</table>';

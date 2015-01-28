@@ -172,8 +172,8 @@ fieldset { border:0px; }
 	.seat_available.green { background:#13351C }
 	.seat_available.blue { background:#1A3B66 }
 	.seat_available.brown { background:#4C1700 }
-	
+	.seat_available.gold { background:#633C1D; width:25px }
 	.seat_available:hover { background:#FFFF66; color:#000 }
 	.seat_available.selected { background:#FF6600; color:#fff; text-shadow:0px 0px #fff }
-	.saperate { padding:10px }
+	.saperate { padding:5px }
 	.newRow { margin:20px 0px 20px 20px }

@@ -98,7 +98,7 @@ class CustomerController extends Controller {
 			$Customer->seatJson = urldecode(Input::get('seat'));
 			$Customer->showDate = Input::get('showDate');
 			$Customer->user_id = Auth::id();
-			$Customer->total = $total;
+			$Customer->total = Input::get('freeTicket') == 1 ? 0 : $total;
 			$Customer->status = 0;
 			$Customer->save();
 			

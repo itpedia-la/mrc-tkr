@@ -18,7 +18,7 @@
 			<th>ຈອງວັນທີ</th>
 			<th>ໝົດກຳໜົດ</th>
 			<th>ສະຖານະ</th>
-	
+			<th>&nbsp;</th>
 		</tr>
 	</thead>
 	@foreach( $data as $value )
@@ -37,7 +37,19 @@
 		<td>{{ $value['created_at'] }}</td>
 		<td>{{ @$value['expired_at'] }}</td>
 		<td>{{ @$value['statusHtml'] }}</td>
+			<td>
+
+		@if( $value['status'] == 1 ) 
+			<button class="k-button setIssued"id="{{ $value['id'] }}">ຮັບປີ້</button> 
+		@elseif( $value['status'] == 2 ) 
 		
+		@elseif( $value['status'] == 3 ) 
+		
+		@else
+			<button class="k-button setPaid" id="{{ $value['id'] }}">ຈ່າຍເງິນແລ້ວ</button> 
+	
+		@endif
+		</td>
 	</tr>
 	
 	@endforeach
@@ -47,7 +59,7 @@
 		<td align="right">ຮັບເງິນ:</td>
 		<td>{{ $sumary['totalPaid'] }}</td>
 		<td align="right">ຍັງເຫລືອ:</td>
-		<td>{{ $sumary['totalLeft'] }}</td>
+		<td colspan="2">{{ $sumary['totalLeft'] }}</td>
 		
 	</tr>
 </table>
@@ -55,6 +67,48 @@
 </div>
 <script type="text/javascript">
 
+
+$(".k-button.setPaid").click(function(e){
+    var id = $(this).attr('id');
+    e.preventDefault();
+	alertMessage('ທ່ານຕ້ອງການຕັ້ງລາຍການນີ້ເປັນ "ຈ່າຍແລ້ວ" ຫລືບໍ່?',{
+		ok : function() {
+			$.ajax({
+				url : 'customer/setPaid',
+				type : 'POST',
+				data : { 'id' : id },
+				dataType : 'json',
+				success : function(returnData) {
+					 location.reload(); 
+				},
+				error: function(returnData) {
+
+				}
+			})
+		}
+	});
+});
+
+$(".k-button.setIssued").click(function(e){
+    var id = $(this).attr('id');
+    e.preventDefault();
+	alertMessage('ທ່ານຕ້ອງການຕັ້ງລາຍການນີ້ເປັນ "ຮັບປີ້ແລ້ວ" ຫລືບໍ່?',{
+		ok : function() {
+			$.ajax({
+				url : 'customer/setIssued',
+				type : 'POST',
+				data : { 'id' : id },
+				dataType : 'json',
+				success : function(returnData) {
+					 location.reload(); 
+				},
+				error: function(returnData) {
+
+				}
+			})
+		}
+	});
+});
 </script>
 
 @include('layout.footer')

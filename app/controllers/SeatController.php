@@ -15,6 +15,19 @@ class SeatController extends Controller {
 	
 	function home() {
 		
+		
+		
+		if( Auth::id() ) {
+			# Check if manager
+			$user_group_id = User::find(Auth::id());
+			$user_group_id = $user_group_id->user_group_id;
+			if( $user_group_id == 1 || $user_group_id == 2 ) {
+				$allowFreeTicket = true;
+			} else {
+				$allowFreeTicket = false;
+			}
+		}
+		
 		/*echo "INSERT INTO seat (number) VALUES ('BR');<br/>";
 		
 		for( $i=1; $i <= 10; $i++ ) {
@@ -126,7 +139,7 @@ class SeatController extends Controller {
 		echo '</pre>';
 		exit();*/
 		return View::make('seat/index')
-			
+			->with('allowFreeTicket',@$allowFreeTicket)
 			->with('VIP',$VIP);
 	}
 	
