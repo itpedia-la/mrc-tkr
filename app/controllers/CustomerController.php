@@ -143,6 +143,10 @@ class CustomerController extends Controller {
 			$s->save();
 		}
 	
+		if( $Customer->user_id == null ) {
+			$Customer->user_id = Auth::id();
+		}
+		
 		$Customer->save();
 	
 		return Response::json(null, 200);
