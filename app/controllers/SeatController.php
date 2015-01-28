@@ -63,7 +63,7 @@ class SeatController extends Controller {
 					switch( $value['status'] ) {
 							
 						case 0:
-							$class = 'seat_available';
+							$class = 'seat_available '.$value['seatClass'];
 							$number = $value['number'];
 							break;
 								
