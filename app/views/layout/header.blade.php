@@ -35,7 +35,7 @@
 		<div align="center" style="padding:0px 0px 0px 0px">
 		@if( Auth::id() ) 
 
-			<a class="k-button" href="{{ URL::to('seat') }}">ແຜນຜັງບ່ອນນັ່ງ</a>
+			<a class="k-button" href="{{ URL::to('seat/2015-02-22') }}">ແຜນຜັງບ່ອນນັ່ງ</a>
 			<a class="k-button" href="{{ URL::to('report/all') }}">ລາຍງານ ຍອດຂາຍ ທັງໝົດ</a>
 			<a class="k-button" href="{{ URL::to('report/person') }}">ລາຍງານ ຍອດຂາຍ ສ່ວນບຸກຄົນ</a>
 			<a class="k-button" href="{{ URL::to('user/list') }}">ຜູ້ໃຊ້ງານ</a>
