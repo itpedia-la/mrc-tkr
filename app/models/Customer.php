@@ -16,7 +16,7 @@ class Customer extends Eloquent {
 	 */
 	public static function getReportPersonal() {
 		
-		$Customers = Customer::where('user_id','=', Auth::id() )->where('remove','=',0)->orderBy('id','desc')->get()->toArray();
+		$Customers = Customer::where('user_id','=', Auth::id() )->orWhere('user_id','=',null)->where('remove','=',0)->orderBy('id','desc')->get()->toArray();
 		
 		$data = Customer::rebuild($Customers);
 		
