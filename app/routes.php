@@ -31,8 +31,7 @@ Route::get('report/person', array('before'=>'restrict:8', 'uses' => 'CustomerCon
  * User Route
  * ----------
  */
-Route::get('/admin', 'LoginController@login');
-Route::get('user/login', 'LoginController@login');
+Route::get('/bob-admin', 'LoginController@login');
 Route::post('user/login/submit', 'LoginController@submit');
 Route::get('user/logout','UserController@logout');
 Route::get('user/list', array('before'=>'restrict:3', 'uses' => 'UserController@userList'));
