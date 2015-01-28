@@ -114,7 +114,7 @@ fieldset { border:0px; }
 		width: 14px;
 	}
 	.seat_pending {
-		border:1px solid #bbb; 
+		/*border:1px solid #bbb; */
 		font-size:9px; 
 		color:#fff;
 		padding:1px 2px 1px 2px;
@@ -127,7 +127,7 @@ fieldset { border:0px; }
 		width: 14px;
 	}
 	.seat_paid {
-		border:1px solid #bbb; 
+		/*border:1px solid #bbb; */
 		font-size:9px; 
 		color:#fff;
 		padding:1px 2px 1px 2px;
@@ -140,7 +140,7 @@ fieldset { border:0px; }
 		width: 14px;
 	}
 	.seat_issued {
-		border:1px solid #bbb; 
+		/*border:1px solid #bbb; */
 		font-size:9px; 
 		color:#fff;
 		padding:1px 2px 1px 2px;
@@ -155,20 +155,25 @@ fieldset { border:0px; }
 	.seat_available { 
 		
 
-		border:1px solid #ccc; 
+		/*border:1px solid #ccc; */
 		font-size:9px; 
 		padding:1px 2px 1px 2px;
 		 -moz-border-radius:2px 2px 2px 2px; 
 		border-radius:2px 2px 2px 2px; 
 		cursor: pointer;
 		background:#dedede;
-		text-shadow: 1px 1px #fff;
+		color:#fff;
 		display: inline-block;
 		width: 14px;
 	}
-	.seat_available.red { background:#700000 }
-
-	.seat_available:hover { background:#FFFF66 }
+	
+	.seat_available.red { background:#70060A }
+	.seat_available.purple { background:#720C3C }
+	.seat_available.green { background:#13351C }
+	.seat_available.blue { background:#1A3B66 }
+	.seat_available.brown { background:#4C1700 }
+	
+	.seat_available:hover { background:#FFFF66; color:#000 }
 	.seat_available.selected { background:#FF6600; color:#fff; text-shadow:0px 0px #fff }
 	.saperate { padding:10px }
 	.newRow { margin:20px 0px 20px 20px }

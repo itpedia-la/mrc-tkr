@@ -29,7 +29,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	public static function getAllUser() {
 		
-		$data = User::where('systemUser','=',0)->where('remove','=',0)->get()->toArray();
+		$data = User::where('systemUser','=',0)->where('remove','=',0)->where('id','!=',Auth::id())->get()->toArray();
 	
 		foreach( $data as $key => $value ) {
 			
@@ -54,7 +54,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		
 		if( $user_group_id > 0 ) {
 			
-			$data = User::where('systemUser','=',0)->where('user_group_id','=',$user_group_id)->where('remove','=',0)->get()->toArray();
+			$data = User::where('systemUser','=',0)->where('user_group_id','=',$user_group_id)->where('remove','=',0)->where('id','!=',Auth::id())->get()->toArray();
 			
 		} else {
 			
