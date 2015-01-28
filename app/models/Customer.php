@@ -73,7 +73,10 @@ class Customer extends Eloquent {
 			if( $value['user_id'] > 0 ) {
 				$User = User::find($value['user_id']);
 				$User = $User->firstname;
+			} else {
+				$User = 'ລູກຄ້າ';
 			}
+			
 			$data[$key]['total'] = number_format($value['total']).' ກີບ';
 			$data[$key]['created_at'] = Tool::toDateTime($value['created_at']);
 			$data[$key]['updated_at'] = Tool::toDateTime($value['updated_at']);
