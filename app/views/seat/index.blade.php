@@ -15,7 +15,7 @@
 	<!-- Begine: VIP ZONE -->
 	<div align="center">
 	
-		<br/>--------------------------------------------------- <span class="tag fb"><b>600,000</b></span> ---------------------------------------------------</br></br>
+		<br/>---------------- <span class="tag fb">600,000</span> ----------------</br></br>
 		@foreach( $VIP as $seat )
 			
 				{{ HTML::decode( $seat['seat']) }}

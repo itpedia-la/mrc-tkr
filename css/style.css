@@ -1,4 +1,4 @@
-body { margin:0px; padding:0px; font-family: tahoma; font-size:13px; background:url(../img/background.png) repeat-x #fff }
+body { margin:0px; padding:0px; font-family: tahoma; font-size:12px; background:url(../img/background.png) repeat-x #fff }
 #wrapper { width:1028; margin:0px auto; padding:0px ;}
 #footer { color:#ccc }
 hr { border-top:1px solid #DBDBDE; border-right:none; border-left:none; margin:5px 0px 5px 0px; border-bottom:1px solid #fff}
@@ -102,9 +102,9 @@ fieldset { border:0px; }
 	br { margin:0px; padding:0px }
 	.seat_reserved_public {
 		border:1px solid #bbb; 
-		font-size:9px; 
+		font-size:8px; 
 		color:#ccc;
-		padding:1px 2px 1px 2px;
+		padding:1px 1px 1px 1px;
 		 -moz-border-radius:2px 2px 2px 2px; 
 		border-radius:2px 2px 2px 2px; 
 		
@@ -115,9 +115,9 @@ fieldset { border:0px; }
 	}
 	.seat_pending {
 		/*border:1px solid #bbb; */
-		font-size:9px; 
+		font-size:8px; 
 		color:#fff;
-		padding:1px 2px 1px 2px;
+		padding:1px 1px 1px 1px;
 		 -moz-border-radius:2px 2px 2px 2px; 
 		border-radius:2px 2px 2px 2px; 
 		
@@ -128,9 +128,9 @@ fieldset { border:0px; }
 	}
 	.seat_paid {
 		/*border:1px solid #bbb; */
-		font-size:9px; 
+		font-size:8px; 
 		color:#fff;
-		padding:1px 2px 1px 2px;
+		padding:1px 1px 1px 1px;
 		 -moz-border-radius:2px 2px 2px 2px; 
 		border-radius:2px 2px 2px 2px; 
 		
@@ -141,9 +141,9 @@ fieldset { border:0px; }
 	}
 	.seat_issued {
 		/*border:1px solid #bbb; */
-		font-size:9px; 
+		font-size:8px; 
 		color:#fff;
-		padding:1px 2px 1px 2px;
+		padding:1px 1px 1px 1px;
 		 -moz-border-radius:2px 2px 2px 2px; 
 		border-radius:2px 2px 2px 2px; 
 		
@@ -156,8 +156,8 @@ fieldset { border:0px; }
 		
 
 		/*border:1px solid #ccc; */
-		font-size:9px; 
-		padding:1px 2px 1px 2px;
+		font-size:8px; 
+		padding:1px 1px 1px 1px;
 		 -moz-border-radius:2px 2px 2px 2px; 
 		border-radius:2px 2px 2px 2px; 
 		cursor: pointer;

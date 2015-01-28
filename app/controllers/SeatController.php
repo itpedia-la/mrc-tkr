@@ -67,7 +67,7 @@ class SeatController extends Controller {
 			
 			} elseif( $value['number'] == 'hr' ) {
 				
-				$value['seat'] = HTML::entities('</br><br/>--------------------------------------------------- <span class="tag fb"><b>'.number_format($value['price']).'</b></span> ---------------------------------------------------</br></br>');
+				$value['seat'] = HTML::entities('</br><br/>---------------- <span class="tag fb">'.number_format($value['price']).'</span> ----------------</br></br>');
 				
 			} else {
 				
