@@ -17,7 +17,7 @@ class UserController extends BaseController {
 	
 		Auth::logout();
 	
-		return Redirect::to('/user/login')->with('message', 'ທ່ານໄດ້ອອກຈາກລະບົບແລ້ວ');
+		return Redirect::to('/bob-admin')->with('message', 'ທ່ານໄດ້ອອກຈາກລະບົບແລ້ວ');
 	}
 	
 	/**
