@@ -111,67 +111,48 @@
    	   	}
 	});
 	
-    $(".k-button.k-primary.remove").click(function(e){
-        var id = $(this).attr('id');
-        e.preventDefault();
-		alertMessage('ທ່ານຕ້ອງການ "ຍົກເລີກ"ລາຍການນີ້ບໍ່?',{
-			ok : function() {
-				$.ajax({
-					url : 'customer/remove',
-					type : 'POST',
-					data : { 'id' : id },
-					dataType : 'json',
-					success : function(returnData) {
-						 location.reload(); 
-					},
-					error: function(returnData) {
-
-					}
-				})
-			}
-		});
-    });
-
     $(".k-button.setPaid").click(function(e){
         var id = $(this).attr('id');
         e.preventDefault();
-		alertMessage('ທ່ານຕ້ອງການຕັ້ງລາຍການນີ້ເປັນ "ຈ່າຍແລ້ວ" ຫລືບໍ່?',{
-			ok : function() {
-				$.ajax({
-					url : 'customer/setPaid',
-					type : 'POST',
-					data : { 'id' : id },
-					dataType : 'json',
-					success : function(returnData) {
-						 location.reload(); 
-					},
-					error: function(returnData) {
+        var a = confirm('ທ່ານຕ້ອງການຕັ້ງລາຍການນີ້ເປັນ "ຈ່າຍແລ້ວ" ຫລືບໍ່?');
 
-					}
-				})
-			}
-		});
+        if( a == true) {
+        	$.ajax({
+				url : 'customer/setPaid',
+				type : 'POST',
+				data : { 'id' : id },
+				dataType : 'json',
+				success : function(returnData) {
+					 location.reload(); 
+				},
+				error: function(returnData) {
+
+				}
+			})
+        }
+
     });
 
     $(".k-button.setIssued").click(function(e){
         var id = $(this).attr('id');
         e.preventDefault();
-		alertMessage('ທ່ານຕ້ອງການຕັ້ງລາຍການນີ້ເປັນ "ຮັບປີ້ແລ້ວ" ຫລືບໍ່?',{
-			ok : function() {
-				$.ajax({
-					url : 'customer/setIssued',
-					type : 'POST',
-					data : { 'id' : id },
-					dataType : 'json',
-					success : function(returnData) {
-						 location.reload(); 
-					},
-					error: function(returnData) {
+        var a = confirm('ທ່ານຕ້ອງການຕັ້ງລາຍການນີ້ເປັນ "ຮັບປີ້ແລ້ວ" ຫລືບໍ່?');
 
-					}
-				})
-			}
-		});
+        if( a == true) {
+        	$.ajax({
+				url : 'customer/setIssued',
+				type : 'POST',
+				data : { 'id' : id },
+				dataType : 'json',
+				success : function(returnData) {
+					 location.reload(); 
+				},
+				error: function(returnData) {
+
+				}
+			})
+        }
+
     });
       	
 </script>
