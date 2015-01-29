@@ -39,12 +39,37 @@ class Customer extends Eloquent {
 	
 	/**
 	 * Get Report By User
+	 * -----------------
+	 */
+	public static function getReportByUserWithStatus($user_id, $status) {
+
+		if( $status == "all") {
+			$Customers = Customer::where('user_id','=',$user_id)->where('remove','=', 0 )->orderBy('id','desc')->get()->toArray();
+		} else {
+			$Customers = Customer::where('user_id','=',$user_id)->where('status','=',$status)->where('remove','=', 0 )->orderBy('id','desc')->get()->toArray();
+		}
+
+		$data = Customer::rebuild($Customers);
+	
+		return $data;
+	}
+	
+	/**
+	 * Get Report By User
 	 * --------------
 	 */
 	public static function getReportByUser($user_id) {
 	
-		$Customers = Customer::where('user_id','=',$user_id)->where('remove','=', 0 )->orderBy('id','desc')->get()->toArray();
-	
+		if( $user_id == 0 ) {
+			
+			$Customers = Customer::where('user_id','=',null)->where('remove','=', 0 )->orderBy('id','desc')->get()->toArray();
+			
+		} else {
+			
+			$Customers = Customer::where('user_id','=',$user_id)->where('remove','=', 0 )->orderBy('id','desc')->get()->toArray();
+			
+		}
+
 		$data = Customer::rebuild($Customers);
 	
 		return $data;
@@ -179,6 +204,17 @@ class Customer extends Eloquent {
 		$total = DB::table('customer')->where('remove','0',0)->whereIn('status',array(0,1,2))->where('user_id','=',$user_id)->sum('total');
 	
 		$totalPaid = DB::table('customer')->where('remove','0',0)->whereIn('status', array(1,2))->where('user_id','=',$user_id)->sum('total');
+	
+		$totalLeft = $total - $totalPaid;
+	
+		return array('totalPending'=>number_format($total).' ກີບ','totalPaid'=>number_format($totalPaid).' ກິບ', 'totalLeft'=>number_format($totalLeft).' ກີບ');
+	}
+	
+	public static function sumaryByUserWithStatus($status, $user_id) {
+	
+		$total = DB::table('customer')->where('remove','0',0)->where('status','=',$status)->where('user_id','=',$user_id)->sum('total');
+	
+		$totalPaid = DB::table('customer')->where('remove','0',0)->where('status','=',$status)->where('user_id','=',$user_id)->sum('total');
 	
 		$totalLeft = $total - $totalPaid;
 	

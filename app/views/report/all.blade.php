@@ -4,7 +4,14 @@
 <div style="width:100%">
 
 @if( Session::get('message') ) <div class="message green">{{ Session::get('message') }}</div>@endif
-<p><input type="text" id="ddUserList"></p>
+<p><input type="text" id="ddUserList" value="{{ Route::input('user_id') }}">
+<select id="ddStatus">
+<option value="all" @if( Route::input('status') == "all") selected="selected" @endif>ທັງໝົດ</option>
+<option value="0" @if( Route::input('status') == "0") selected="selected" @endif>ລໍຖ້າຈ່າຍເງິນ</option>
+<option value="1" @if( Route::input('status') == "1") selected="selected" @endif>ຈ່າຍເງິນແລ້ວ</option>
+<option value="2" @if( Route::input('status') == "2") selected="selected" @endif>ຮັບປີ້ແລ້ວ</option>
+</select>
+<button class="k-button k-primary" id="btnFilter">Filter</button></p>
 <table class="tableStylingReport" cellpadding="3" cellspacing="0">
 	<thead>
 		<tr style="background:#11315A; color:white">
@@ -56,43 +63,61 @@
 	</tr>
 	
 	@endforeach
+	@if( $sumary )
 	<tr style="background:#11315A; color:white">
 		<td colspan="6" align="right">ລວມທົງໝົດ:</td>
-		<td>{{ $sumary['totalPending'] }}</td>
+		<td>{{ @$sumary['totalPending'] }}</td>
 		<td align="right">ຮັບເງິນ:</td>
-		<td>{{ $sumary['totalPaid'] }}</td>
+		<td>{{ @$sumary['totalPaid'] }}</td>
 		<td align="right">ຍັງເຫລືອ:</td>
 		<td colspan="2">{{ $sumary['totalLeft'] }}</td>
 		
 	</tr>
+	@endif
 </table>
 </div>
 </div>
 <script type="text/javascript">
+
+
+	
+	$("#ddStatus").kendoDropDownList();
+	
         // create DropDownList from input HTML element
        $("#ddUserList").kendoDropDownList({
-		dataValueField: "id",
-        dataTextField: "firstname",
+		dataValueField: "user_id",
+        dataTextField: "user",
         autoBind: true,
         change: function(e) {
             var id = this.value() > 0 ? this.value() : 0;
 
-            window.location = 'report/user/'+id;
+           // window.location = 'report/user/'+id;
         },
         optionLabel: {
-        	firstname: '- ພະນັກງານ -',
-            id: ""
+        	user: '- ພະນັກງານທັງໝົດ -',
+        	user_id: ""
         },
         dataSource: {
             transport: {
                 read: {
-                	url: "{{ URL::to('user/json/list') }}",
+                	url: "{{ URL::to('/sale_list') }}",
                     dataType: "json",
                 }
             }
         }
 	});
 
+   	$("#btnFilter").click(function(){
+   	   	if( $("#ddUserList").data('kendoDropDownList').value() == 0 ) {
+
+   	   	window.location = 'report/user/'+$("#ddUserList").data('kendoDropDownList').value();
+   	   	
+   	   	} else {
+   	   	   	
+		window.location = 'report/custom/'+ $("#ddUserList").data('kendoDropDownList').value()+'/'+$( "#ddStatus option:selected").val();
+   	   	}
+	});
+	
     $(".k-button.k-primary.remove").click(function(e){
         var id = $(this).attr('id');
         e.preventDefault();

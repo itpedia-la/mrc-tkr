@@ -24,6 +24,14 @@ class CustomerController extends Controller {
 		
 	}
 	
+	function reportCustom() {
+		$user_id = Route::input('user_id');
+		$status = Route::input('status');
+		$data = Customer::getReportByUserWithStatus($user_id, $status);
+		$sumary = Customer::sumaryByUserWithStatus($status, $user_id);
+		return View::make('report/all')->with('data',$data)->with('sumary',@$sumary);
+		
+	}
 	/**
 	 * Customer By user_id
 	 * -------------------
@@ -103,7 +111,7 @@ class CustomerController extends Controller {
 			$Customer->save();
 			
 			$CustomerUpdate = Customer::find($Customer->id);
-			$CustomerUpdate->expired_at = date('Y-m-d',strtotime( $CustomerUpdate->created_at ) + (24*3600*5));
+			$CustomerUpdate->expired_at = date('Y-m-d',strtotime( $CustomerUpdate->created_at ) + (24*3600*3));
 			$CustomerUpdate->save();
 			
 			$id = Crypt::encrypt($Customer->id);
@@ -195,6 +203,34 @@ class CustomerController extends Controller {
 			}
 		}
 
+	}
+	
+	/**
+	 * Get Sales list by user
+	 * ----------------------
+	 */
+	public function saleList() {
+	
+		$data = Customer::orderBy('user_id')->groupBy('user_id')->get()->toArray();
+
+		foreach ( $data as $key => $value ) {
+
+			if( $value['user_id'] > 0 ) {
+				
+				$user = User::find($value['user_id']);
+				$user = $user->firstname;
+				
+			} else {
+				
+				$user = 'ລູກຄ້າ';
+				
+			}
+			$result[$key]['user_id'] = $value['user_id'] > 0 ? $value['user_id'] : 0;
+			$result[$key]['user'] = $user;
+		}
+		
+		return Response::json($result)->setCallback(Input::get('callback'));
+	
 	}
 	
 }

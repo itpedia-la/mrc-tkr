@@ -19,11 +19,13 @@ Route::get('/', 'HomeController@home');
 Route::get('done/{id}' , 'HomeController@done');
 Route::get('seat/' , 'SeatController@home');
 Route::get('seat/{showDate}' , 'SeatController@home');
+Route::get('sale_list' , 'CustomerController@saleList');
 Route::post('customer/submit' , 'CustomerController@submit');
 Route::post('customer/remove' , array('before'=>'restrict:5', 'uses' => 'CustomerController@remove') );
 Route::post('customer/setPaid' , array('before'=>'restrict:6', 'uses' => 'CustomerController@setPaid') );
 Route::post('customer/setIssued' , array('before'=>'restrict:6', 'uses' => 'CustomerController@setIssued') );
 Route::get('report/all', array('before'=>'restrict:7', 'uses' => 'CustomerController@reportAll'));
+Route::get('report/custom/{user_id}/{status}', array('before'=>'restrict:7', 'uses' => 'CustomerController@reportCustom'));
 Route::get('report/user/{user_id}', array('before'=>'restrict:7', 'uses' => 'CustomerController@reportByUser'));
 Route::get('report/person', array('before'=>'restrict:8', 'uses' => 'CustomerController@reportPerson'));
 
