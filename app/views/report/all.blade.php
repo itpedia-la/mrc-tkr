@@ -51,6 +51,7 @@
 
 		@if( $value['status'] == 1 ) 
 			<button class="k-button setIssued"id="{{ $value['id'] }}">ຮັບປີ້</button> 
+			<button class="k-button k-primary remove" id="{{ $value['id'] }}">ຍົກເລີກ</button> 
 		@elseif( $value['status'] == 2 ) 
 		
 		@elseif( $value['status'] == 3 ) 
