@@ -107,7 +107,7 @@
 					content+= '<tr><td colspan="2" align="center"><hr/></tr>';
 					content+= '<tr><td width="40%" align="right">&nbsp;</td><td><button type="submit" class="k-button k-primary">ຕົກລົງ</button> <button type="button" class="k-button" id="btnCancel">ຍົກເລີກ</button></td></tr>';
 				@else
-					content+= '<tr><td colspan="2" align="center"><p style="margin:50px 0px 0px 0px">ຕິດຕໍ່ ທີ່ເບີ 020 7897 7711, 020 7897 7722 ແລະ 020 7897 7733 ຢືນຢັນການຈອງແລະຊຳລະເງິນ</p></td></tr>';
+					content+= '<tr><td colspan="2" align="center"><p style="margin:50px 0px 0px 0px">ຕິດຕໍ່ ທີ່ເບີ 020 7897 7711, 020 7897 7722 ແລະ 020 7897 7733 ເພື່ອຢືນຢັນການຈອງແລະຊຳລະເງິນ</p></td></tr>';
 					content+= '<tr><td colspan="2" align="center"><p style="margin:50px 0px 0px 0px">ຂໍຂອບໃຈ,</p></td></tr>';
 					content+= '<tr><td colspan="2" align="center"><hr/></tr>';
 					content+= '<tr><td width="40%" align="right">&nbsp;</td><td><button type="submit" class="k-button k-primary" id="btnCancel">ຕົກລົງ</button></td></tr>';
