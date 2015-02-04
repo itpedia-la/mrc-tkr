@@ -21,6 +21,8 @@ Route::get('seat/' , 'SeatController@home');
 Route::get('seat/{showDate}' , 'SeatController@home');
 Route::get('sale_list' , 'CustomerController@saleList');
 Route::post('customer/submit' , 'CustomerController@submit');
+Route::get('customer/ticket_issue/{customer_id}' , 'CustomerController@ticket_issue');
+Route::post('customer/ticket_issue/submit' , 'CustomerController@ticket_issue_submit');
 Route::post('customer/remove' , array('before'=>'restrict:5', 'uses' => 'CustomerController@remove') );
 Route::post('customer/setPaid' , array('before'=>'restrict:6', 'uses' => 'CustomerController@setPaid') );
 Route::post('customer/setIssued' , array('before'=>'restrict:6', 'uses' => 'CustomerController@setIssued') );

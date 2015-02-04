@@ -233,4 +233,19 @@ class CustomerController extends Controller {
 	
 	}
 	
+	public function ticket_issue() {
+		
+		return View::make('customer/index');
+	}
+	
+	public function ticket_issue_submit() {
+	
+
+		$customer = Customer::find(Input::get('customer_id'));
+		$customer->ticket_issue = Input::get('ticketIssue');
+		$customer->save();
+		
+		return Redirect::to('report/all')->with('message','ຂໍ້ມູນການແຈກປີ້ໄດ້ຖືກບັນຖືກແລ້ວ');
+	}
+	
 }

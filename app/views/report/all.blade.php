@@ -27,6 +27,7 @@
 			<th>ຈອງວັນທີ</th>
 			<th>ໝົດກຳໜົດ</th>
 			<th>ສະຖານະ</th>
+		<th>ຜູ້ຮັບປີ້</th>
 		<th>&nbsp;</th>
 		</tr>
 	</thead>
@@ -47,6 +48,8 @@
 		<td>{{ $value['created_at'] }}</td>
 		<td>{{ @$value['expired_at'] }}</td>
 		<td>{{ @$value['statusHtml'] }}</td>
+		<td>{{ @$value['ticket_issue'] }}</td>
+
 		<td>
 
 		@if( $value['status'] == 1 ) 
@@ -57,6 +60,7 @@
 		@elseif( $value['status'] == 3 ) 
 		
 		@else
+			<button class="k-button ticketIssue"id="{{ $value['id'] }}">ແຈກປີ້</button> 
 			<button class="k-button setPaid" id="{{ $value['id'] }}">ຈ່າຍເງິນແລ້ວ</button> 
 			<button class="k-button k-primary remove" id="{{ $value['id'] }}">ຍົກເລີກ</button> 
 		@endif
@@ -108,6 +112,12 @@
         }
 	});
 
+    $(".k-button.ticketIssue").click(function(e){
+		e.preventDefault();
+		window.location = 'customer/ticket_issue/'+$(this).attr('id');
+    });
+
+    
    	$("#btnFilter").click(function(){
    	   	if( $("#ddUserList").data('kendoDropDownList').value() == 0 ) {
 
