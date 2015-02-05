@@ -85,7 +85,10 @@
 <script type="text/javascript">
 
 
-	
+$(".k-button.k-primary.remove").kendoButton({enable:true});
+$(".k-button.setPaid").kendoButton({enable:true});
+$(".k-button.setIssued").kendoButton({enable:true});
+
 	$("#ddStatus").kendoDropDownList();
 	
         // create DropDownList from input HTML element

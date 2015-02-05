@@ -72,7 +72,8 @@
 </div>
 <script type="text/javascript">
 
-
+$(".k-button.k-primary.remove").kendoButton({enable:true});
+$(".k-button.setIssued").kendoButton({enable:true});
 	
 	$("#ddStatus").kendoDropDownList();
 	

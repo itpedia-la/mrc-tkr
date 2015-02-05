@@ -117,7 +117,7 @@
 
 		confirmDialog.content(content);
 		confirmDialog.center().open();
-
+		 $("#btnSubmit").kendoButton({enable:true});
 		$("#total").kendoNumericTextBox();
 		
 		$("#btnCancel").click(function(e){
