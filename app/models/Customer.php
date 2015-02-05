@@ -93,7 +93,7 @@ class Customer extends Eloquent {
 				
 				if( $value['status'] == 1 ) {
 	
-					$seatJson[$jKey]['name'] = '<span class="seat_seat_paid">'.$jValue['name'].'</span>';
+					$seatJson[$jKey]['name'] = '<span class="seat_paid">'.$jValue['name'].'</span>';
 		
 				} elseif( $value['status'] == 2 ) {
 					
