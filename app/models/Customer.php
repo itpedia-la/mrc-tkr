@@ -90,7 +90,16 @@ class Customer extends Eloquent {
 			foreach( $seatJson as $jKey => $jValue) {
 				
 				$seat = Seat::find($jValue['value']);
-				$seatJson[$jKey]['name'] = Customer::SeatStatusAdjust($jValue['name'], $seat->status );
+				
+				if( $value['status'] == 3 ) {
+	
+					$seatJson[$jKey]['name'] = Customer::SeatStatusAdjust($jValue['name'], $seat->status );
+		
+				} else {
+					
+					$seatJson[$jKey]['name'] = '<span class="tag red">ຍົກເລີກ</span>';
+				}
+				
 				$seatJson[$jKey]['status'] = $seat->status;
 			}
 			
