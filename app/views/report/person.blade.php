@@ -131,6 +131,8 @@ $(".k-button.setIssued").kendoButton({enable:true});
 
 				}
 			})
+        }else {
+        	 $(this).data('kendoButton').enable(true);
         }
 
     });
@@ -154,6 +156,8 @@ $(".k-button.setIssued").kendoButton({enable:true});
 
 				}
 			})
+        }else {
+        	 $(this).data('kendoButton').enable(true);
         }
 
     });
