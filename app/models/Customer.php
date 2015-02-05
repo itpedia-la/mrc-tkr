@@ -91,13 +91,22 @@ class Customer extends Eloquent {
 				
 				$seat = Seat::find($jValue['value']);
 				
-				if( $value['status'] == 3 ) {
+				if( $value['status'] == 1 ) {
 	
-					$seatJson[$jKey]['name'] = '<span class="seat_cancelled">'.$jValue['name'].'</span>';
+					$seatJson[$jKey]['name'] = '<span class="seat_seat_paid">'.$jValue['name'].'</span>';
 		
+				} elseif( $value['status'] == 2 ) {
+					
+					$seatJson[$jKey]['name'] = '<span class="seat_issued">'.$jValue['name'].'</span>';
+					
+				} elseif($value['status'] == 3 ) {
+					
+					$seatJson[$jKey]['name'] = '<span class="seat_cancelled">'.$jValue['name'].'</span>';
+					
 				} else {
 
-					$seatJson[$jKey]['name'] = Customer::SeatStatusAdjust($jValue['name'], $seat->status );
+					//$seatJson[$jKey]['name'] = Customer::SeatStatusAdjust($jValue['name'], $seat->status );
+					$seatJson[$jKey]['name'] = '<span class="seat_pending">'.$jValue['name'].'</span>';
 				}
 				
 				$seatJson[$jKey]['status'] = $seat->status;
