@@ -140,7 +140,9 @@
 					window.location = 'done/'+returnData;
 				},
 				error: function(returnData) {
-					
+
+					 $("#btnSubmit").data('kendoButton').enable(true);
+					 
 					var parsed = JSON.parse(returnData.responseText);
 				
 					var fullname = parsed['fullname'] == null ? '' : parsed['fullname'][0]+', ';
