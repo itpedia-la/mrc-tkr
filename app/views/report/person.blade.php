@@ -112,6 +112,7 @@
 	});
 	
     $(".k-button.setPaid").click(function(e){
+    	 $(this).attr('disabled','disabled');
         var id = $(this).attr('id');
         e.preventDefault();
         var a = confirm('ທ່ານຕ້ອງການຕັ້ງລາຍການນີ້ເປັນ "ຈ່າຍແລ້ວ" ຫລືບໍ່?');
@@ -134,6 +135,7 @@
     });
 
     $(".k-button.setIssued").click(function(e){
+    	 $(this).attr('disabled','disabled');
         var id = $(this).attr('id');
         e.preventDefault();
         var a = confirm('ທ່ານຕ້ອງການຕັ້ງລາຍການນີ້ເປັນ "ຮັບປີ້ແລ້ວ" ຫລືບໍ່?');
