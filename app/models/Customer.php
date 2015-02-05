@@ -93,7 +93,7 @@ class Customer extends Eloquent {
 				
 				if( $value['status'] == 3 ) {
 	
-					$seatJson[$jKey]['name'] = '<span class="tag red">'.$jValue['name'].'</span>';
+					$seatJson[$jKey]['name'] = '<span class="seat_cancelled">'.$jValue['name'].'</span>';
 		
 				} else {
 
