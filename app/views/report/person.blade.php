@@ -73,8 +73,9 @@
 <script type="text/javascript">
 
 $(".k-button.k-primary.remove").kendoButton({enable:true});
+$(".k-button.setPaid").kendoButton({enable:true});
 $(".k-button.setIssued").kendoButton({enable:true});
-	
+
 	$("#ddStatus").kendoDropDownList();
 	
         // create DropDownList from input HTML element
@@ -113,7 +114,7 @@ $(".k-button.setIssued").kendoButton({enable:true});
 	});
 	
     $(".k-button.setPaid").click(function(e){
-    	 $(this).data('kendoButton').enable(false);
+    	$(this).data('kendoButton').enable(false);
         var id = $(this).attr('id');
         e.preventDefault();
         var a = confirm('ທ່ານຕ້ອງການຕັ້ງລາຍການນີ້ເປັນ "ຈ່າຍແລ້ວ" ຫລືບໍ່?');
