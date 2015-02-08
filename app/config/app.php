@@ -39,7 +39,7 @@ return array(
 	|
 	*/
 
-	'timezone' => 'Asian/Vientiane',
+	'timezone' => 'Asia/Vientiane',
 
 	/*
 	|--------------------------------------------------------------------------
