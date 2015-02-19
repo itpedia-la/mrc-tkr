@@ -180,7 +180,7 @@ class CustomerController extends Controller {
 	
 	public static function expiredDateCheck() {
 		
-		$Customer = Customer::where('status','=',0)->where('remove','=',0)->get()->toArray();
+		/*$Customer = Customer::where('status','=',0)->where('remove','=',0)->get()->toArray();
 		
 		foreach( $Customer as $key => $value ) {
 			
@@ -201,7 +201,7 @@ class CustomerController extends Controller {
 				$CustomerUpdate->save();
 
 			}
-		}
+		}*/
 
 	}
 	

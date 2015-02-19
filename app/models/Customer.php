@@ -212,9 +212,18 @@ class Customer extends Eloquent {
 	
 	public static function sumaryByUserWithStatus($status, $user_id) {
 	
-		$total = DB::table('customer')->where('remove','0',0)->where('status','=',$status)->where('user_id','=',$user_id)->sum('total');
-	
-		$totalPaid = DB::table('customer')->where('remove','0',0)->where('status','=',$status)->where('user_id','=',$user_id)->sum('total');
+		if( $status == 'all' ) {
+			
+			$total = DB::table('customer')->where('remove','0',0)->where('user_id','=',$user_id)->where('status','!=',3)->sum('total');
+			
+			
+		} else {
+			
+			$total = DB::table('customer')->where('remove','0',0)->where('user_id','=',$user_id)->where('status','=',$status)->sum('total');
+			
+		}
+		
+		$totalPaid = DB::table('customer')->where('remove','0',0)->whereIn('status', array(1,2))->where('user_id','=',$user_id)->sum('total');
 	
 		$totalLeft = $total - $totalPaid;
 	
