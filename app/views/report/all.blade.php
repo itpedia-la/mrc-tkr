@@ -85,7 +85,10 @@
 <script type="text/javascript">
 
 
-	
+$(".k-button.k-primary.remove").kendoButton({enable:true});
+$(".k-button.setPaid").kendoButton({enable:true});
+$(".k-button.setIssued").kendoButton({enable:true});
+
 	$("#ddStatus").kendoDropDownList();
 	
         // create DropDownList from input HTML element
@@ -130,6 +133,7 @@
 	});
 	
     $(".k-button.k-primary.remove").click(function(e){
+    	 $(this).data('kendoButton').enable(false);
         var id = $(this).attr('id');
         e.preventDefault();
         var a = confirm('ທ່ານຕ້ອງການ "ຍົກເລີກ"ລາຍການນີ້ບໍ່?');
@@ -147,10 +151,13 @@
 
 				}
 			})
+        } else {
+        	 $(this).data('kendoButton').enable(true);
         }
     });
 
     $(".k-button.setPaid").click(function(e){
+    	 $(this).data('kendoButton').enable(false);
         var id = $(this).attr('id');
         e.preventDefault();
         var a = confirm('ທ່ານຕ້ອງການຕັ້ງລາຍການນີ້ເປັນ "ຈ່າຍແລ້ວ" ຫລືບໍ່?');
@@ -168,11 +175,14 @@
 
 				}
 			})
+        }else {
+        	 $(this).data('kendoButton').enable(true);
         }
 
     });
 
     $(".k-button.setIssued").click(function(e){
+    	 $(this).data('kendoButton').enable(false);
         var id = $(this).attr('id');
         e.preventDefault();
         var a = confirm('ທ່ານຕ້ອງການຕັ້ງລາຍການນີ້ເປັນ "ຮັບປີ້ແລ້ວ" ຫລືບໍ່?');
@@ -190,6 +200,8 @@
 
 				}
 			})
+        }else {
+        	 $(this).data('kendoButton').enable(true);
         }
 
     });
